@@ -40,3 +40,7 @@ gradle*
 .env
 dependency-reduced-pom.xml
 edifice
+
+
+
+frontend/.pnpm-store/*
