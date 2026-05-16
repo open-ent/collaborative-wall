@@ -39,3 +39,5 @@ node_modules
 gradle*
 .env
 dependency-reduced-pom.xml
+
+frontend/.pnpm-store/*
