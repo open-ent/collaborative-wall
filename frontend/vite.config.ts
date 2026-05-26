@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 import { defineConfig, loadEnv } from 'vite';
@@ -50,6 +51,16 @@ export default ({ mode }: { mode: string }) => {
           __dirname,
           'node_modules/@edifice.io/bootstrap/dist/images',
         ),
+        // Force single instance per singleton — prevents pnpm symlink duplication
+        // from creating separate module contexts (same issue as React singletons)
+        '@tanstack/react-query': resolve(
+          __dirname,
+          'node_modules/@tanstack/react-query',
+        ),
+        '@tanstack/react-query-devtools': resolve(
+          __dirname,
+          'node_modules/@tanstack/react-query-devtools',
+        ),
       },
     },
 
@@ -86,6 +97,14 @@ export default ({ mode }: { mode: string }) => {
     },
 
     plugins: [
+      federation({
+        name: 'collaborativewall',
+        filename: 'public/remoteEntry.js',
+        exposes: {
+          './mount': './src/mount.ts',
+        },
+        shared: {},
+      }),
       react(),
       tsconfigPaths(),
       hashEdificeBootstrap({
@@ -94,6 +113,7 @@ export default ({ mode }: { mode: string }) => {
     ],
 
     build: {
+      target: 'esnext',
       outDir: './dist',
       emptyOutDir: true,
       reportCompressedSize: true,
@@ -104,7 +124,7 @@ export default ({ mode }: { mode: string }) => {
       chunkSizeWarningLimit: 5000,
       rollupOptions: {
         output: {
-          inlineDynamicImports: true,
+          // inlineDynamicImports removed: Module Federation requires code splitting
         },
       },
     },

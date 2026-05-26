@@ -1,6 +1,7 @@
 import { Layout, LoadingScreen, useEdificeClient } from '@edifice.io/react';
 import { Outlet, matchPath, useLocation } from 'react-router-dom';
 
+import { useEmbed } from '~/contexts/EmbedContext';
 import { basename } from '..';
 
 /** Check old format URL and redirect if needed */
@@ -25,13 +26,13 @@ export const loader = async () => {
 
 export const Root = () => {
   const location = useLocation();
-
   const { init } = useEdificeClient();
+  const { headless: embedHeadless } = useEmbed();
 
   if (!init) return <LoadingScreen position={false} />;
 
   return (
-    <Layout headless={location.pathname !== '/'}>
+    <Layout headless={embedHeadless || location.pathname !== '/'}>
       <Outlet />
     </Layout>
   );
