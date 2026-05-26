@@ -9,3 +9,8 @@
 nx.json
 package.json
 project.json
+.pnpm-store
+.__mf__temp
+node_modules
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo

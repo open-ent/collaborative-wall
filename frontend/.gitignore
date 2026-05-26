@@ -44,4 +44,4 @@ Thumbs.db
 pnpm-lock.yaml
 
 .env*
-*.tsbuildinfo
+*.tsbuildinfo.__mf__temp/

@@ -69,7 +69,7 @@ const routes = (queryClient: QueryClient): RouteObject[] => [
 
 export const basename = import.meta.env.PROD ? '/collaborativewall' : '/';
 
-export const router = (queryClient: QueryClient) =>
+export const router = (queryClient: QueryClient, overrideBasename?: string) =>
   createBrowserRouter(routes(queryClient), {
-    basename,
+    basename: overrideBasename ?? basename,
   });
