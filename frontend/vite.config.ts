@@ -1,5 +1,4 @@
 /// <reference types="vitest/config" />
-import { federation } from '@module-federation/vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 import { defineConfig, loadEnv } from 'vite';
@@ -46,10 +45,27 @@ export default ({ mode }: { mode: string }) => {
     cacheDir: './node_modules/.vite/collaborativewall',
 
     resolve: {
+      // @open-ent/explorer embarque ses propres copies de @open-ent/{client,react} → instance
+      // dupliquée NON initialisée par EdificeClientProvider (Explorer plante). On force une
+      // instance unique (équivalent du `shared` singleton qu'on avait en Module Federation).
+      dedupe: [
+        'react',
+        'react-dom',
+        '@tanstack/react-query',
+        'react-i18next',
+        'i18next',
+        '@react-spring/web',
+        'react-hook-form',
+        'react-router-dom',
+        '@open-ent/client',
+        '@open-ent/react',
+        '@open-ent/explorer',
+        '@open-ent/bootstrap',
+      ],
       alias: {
         '@images': resolve(
           __dirname,
-          'node_modules/@edifice.io/bootstrap/dist/images',
+          'node_modules/@open-ent/bootstrap/dist/images',
         ),
         // Force single instance per singleton — prevents pnpm symlink duplication
         // from creating separate module contexts (same issue as React singletons)
@@ -97,14 +113,6 @@ export default ({ mode }: { mode: string }) => {
     },
 
     plugins: [
-      federation({
-        name: 'collaborativewall',
-        filename: 'public/remoteEntry.js',
-        exposes: {
-          './mount': './src/mount.ts',
-        },
-        shared: {},
-      }),
       react(),
       tsconfigPaths(),
       hashEdificeBootstrap({
@@ -113,7 +121,6 @@ export default ({ mode }: { mode: string }) => {
     ],
 
     build: {
-      target: 'esnext',
       outDir: './dist',
       emptyOutDir: true,
       reportCompressedSize: true,
@@ -124,7 +131,7 @@ export default ({ mode }: { mode: string }) => {
       chunkSizeWarningLimit: 5000,
       rollupOptions: {
         output: {
-          // inlineDynamicImports removed: Module Federation requires code splitting
+          inlineDynamicImports: true,
         },
       },
     },
