@@ -1,11 +1,11 @@
-import { Toolbar, ToolbarItem, useEdificeClient } from '@edifice.io/react';
+import { Toolbar, ToolbarItem, useEdificeClient } from '@open-ent/react';
 import {
   IconHandMove,
   IconPlus,
   IconRedo,
   IconToolCenter,
   IconUndo,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useHotkeys } from '@mantine/hooks';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';

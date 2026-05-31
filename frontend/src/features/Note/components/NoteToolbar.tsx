@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
-import { Toolbar } from '@edifice.io/react';
+import { Toolbar } from '@open-ent/react';
 import {
   IconLandscape,
   IconLink,
   IconMic,
   IconPaperclip,
   IconRecordVideo,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 
 export const NoteToolbar = ({

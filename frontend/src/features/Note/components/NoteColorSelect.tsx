@@ -1,4 +1,4 @@
-import { Select, useEdificeClient } from '@edifice.io/react';
+import { Select, useEdificeClient } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 import { noteColors } from '~/config';
 

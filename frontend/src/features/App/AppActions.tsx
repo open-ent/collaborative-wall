@@ -6,14 +6,14 @@ import {
   IconButton,
   IconButtonProps,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconOptions,
   IconPrint,
   IconSetBackground,
   IconSettings,
   IconShare,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 
 import { useAccessStore } from '~/hooks/useAccessStore';

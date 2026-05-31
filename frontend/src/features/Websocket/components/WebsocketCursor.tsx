@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useEdificeTheme } from '@edifice.io/react';
+import { useEdificeTheme } from '@open-ent/react';
 
 import { usePerfectCursor } from '../hooks/usePerfectCursor';
 

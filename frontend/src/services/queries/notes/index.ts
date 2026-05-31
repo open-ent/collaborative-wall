@@ -1,4 +1,4 @@
-import { ID, odeServices } from '@edifice.io/client';
+import { ID, odeServices } from '@open-ent/client';
 import {
   queryOptions,
   useMutation,

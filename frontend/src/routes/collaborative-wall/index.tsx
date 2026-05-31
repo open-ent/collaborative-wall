@@ -7,8 +7,8 @@ import {
   wallQueryOptions,
 } from '~/services/queries';
 
-import { checkUserRight, useTrashedResource } from '@edifice.io/react';
-import { odeServices } from '@edifice.io/client';
+import { checkUserRight, useTrashedResource } from '@open-ent/react';
+import { odeServices } from '@open-ent/client';
 import { AppHeader } from '~/features/App/AppHeader';
 import { Description } from '~/features/Description/Description';
 import { Wall } from '~/features/Wall/Wall';

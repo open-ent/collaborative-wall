@@ -1,4 +1,4 @@
-import { odeServices } from '@edifice.io/client';
+import { odeServices } from '@open-ent/client';
 import { useQueries, useQueryClient } from '@tanstack/react-query';
 
 import { NoteProps } from '~/models/notes';

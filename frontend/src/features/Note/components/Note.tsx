@@ -1,11 +1,11 @@
-import { Card } from '@edifice.io/react';
+import { Card } from '@open-ent/react';
 import { useEffect } from 'react';
 import { NodeProps } from 'reactflow';
 import { NoteActions } from '~/features/Note/components/NoteActions';
 import { useAccessStore } from '~/hooks/useAccessStore';
 import { useWhiteboardStore } from '~/store';
 import { NoteMedia } from './NoteMedia';
-import { EditorContent, StarterKit, useEditor } from '@edifice.io/react/editor';
+import { EditorContent, StarterKit, useEditor } from '@open-ent/react/editor';
 
 export const Note = ({ data }: NodeProps) => {
   const canMoveNote = useWhiteboardStore((state) => state.canMoveNote);

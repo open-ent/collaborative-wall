@@ -1,7 +1,7 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 
-import { useEdificeClient, useUser } from '@edifice.io/react';
-import { EditorRef } from '@edifice.io/react/editor';
+import { useEdificeClient, useUser } from '@open-ent/react';
+import { EditorRef } from '@open-ent/react/editor';
 import { useTranslation } from 'react-i18next';
 import {
   useBeforeUnload,

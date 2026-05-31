@@ -11,7 +11,7 @@ import {
   Image,
   Modal,
   useEdificeClient,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 

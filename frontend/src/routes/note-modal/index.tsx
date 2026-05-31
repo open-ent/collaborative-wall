@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { Button, Modal, useEdificeClient } from '@edifice.io/react';
-import { EditorRef } from '@edifice.io/react/editor';
+import { Button, Modal, useEdificeClient } from '@open-ent/react';
+import { EditorRef } from '@open-ent/react/editor';
 import { QueryClient } from '@tanstack/react-query';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';

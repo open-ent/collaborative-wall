@@ -1,5 +1,5 @@
 import { QueryClient } from '@tanstack/react-query';
-import { Explorer } from 'ode-explorer/lib';
+import { Explorer } from '@open-ent/explorer/lib';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 
 import { explorerConfig } from '~/config';
