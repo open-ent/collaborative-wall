@@ -3,8 +3,8 @@ import {
   Breadcrumb,
   LoadingScreen,
   useEdificeClient,
-} from '@edifice.io/react';
-import { IWebApp } from '@edifice.io/client';
+} from '@open-ent/react';
+import { IWebApp } from '@open-ent/client';
 import { useQueryClient } from '@tanstack/react-query';
 import { Suspense, lazy } from 'react';
 import { useParams } from 'react-router-dom';

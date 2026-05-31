@@ -8,7 +8,7 @@ import {
   PreventPropagation,
   useEdificeClient,
   StackedGroup,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import { useUserList } from '~/hooks/useUserList';
 import { useTranslation } from 'react-i18next';
 

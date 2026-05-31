@@ -1,7 +1,7 @@
 import { Fragment, RefAttributes, useEffect } from 'react';
 
-import { Dropdown, IconButton, IconButtonProps } from '@edifice.io/react';
-import { IconOptions } from '@edifice.io/react/icons';
+import { Dropdown, IconButton, IconButtonProps } from '@open-ent/react';
+import { IconOptions } from '@open-ent/react/icons';
 import { NoteDropdownMenuOptions } from '~/features/Note/components/NoteActions';
 import { useWhiteboardStore } from '~/store';
 

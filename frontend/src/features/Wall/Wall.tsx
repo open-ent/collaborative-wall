@@ -1,4 +1,4 @@
-import { LoadingScreen } from '@edifice.io/react';
+import { LoadingScreen } from '@open-ent/react';
 import { Outlet } from 'react-router-dom';
 import 'reactflow/dist/base.css';
 import { useShallow } from 'zustand/react/shallow';

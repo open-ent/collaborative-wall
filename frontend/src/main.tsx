@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 
-import '@edifice.io/bootstrap/dist/index.css';
-import { EdificeClientProvider, EdificeThemeProvider } from '@edifice.io/react';
+import '@open-ent/bootstrap/dist/index.css';
+import { EdificeClientProvider, EdificeThemeProvider } from '@open-ent/react';
 import {
   QueryCache,
   QueryClient,

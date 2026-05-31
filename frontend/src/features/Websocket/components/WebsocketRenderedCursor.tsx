@@ -1,4 +1,4 @@
-import { useUser } from '@edifice.io/react';
+import { useUser } from '@open-ent/react';
 import { useWebsocketStore } from '~/store';
 import { Cursor } from './WebsocketCursor';
 

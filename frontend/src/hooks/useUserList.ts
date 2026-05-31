@@ -1,4 +1,4 @@
-import { useUser } from '@edifice.io/react';
+import { useUser } from '@open-ent/react';
 import { useWall } from '~/services/queries';
 import { useWebsocketStore } from '~/store';
 

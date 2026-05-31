@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
-import { Card, Heading } from '@edifice.io/react';
+import { Card, Heading } from '@open-ent/react';
 import { QueryClient } from '@tanstack/react-query';
 import { LoaderFunctionArgs, useParams } from 'react-router-dom';
 
 import { NoteProps } from '~/models/notes';
 import { useWallWithNotes } from '~/services/queries';
 
-import { Editor } from '@edifice.io/react/editor';
+import { Editor } from '@open-ent/react/editor';
 import { backgroundColors, backgroundImages, wallConfig } from '~/config';
 import { NoteMedia } from '~/features/Note/components/NoteMedia';
 import { CollaborativeWallProps } from '~/models/wall';

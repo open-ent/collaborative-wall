@@ -1,4 +1,4 @@
-import { MediaLibraryType } from '@edifice.io/react/multimedia';
+import { MediaLibraryType } from '@open-ent/react/multimedia';
 
 export interface MediaProps {
   id: string;

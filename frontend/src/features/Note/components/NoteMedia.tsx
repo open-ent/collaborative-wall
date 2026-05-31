@@ -7,14 +7,14 @@ import {
   ToolbarItem,
   useEdificeClient,
   useEdificeIcons,
-} from '@edifice.io/react';
+} from '@open-ent/react';
 import {
   IconDelete,
   IconDownload,
   IconEdit,
   IconExternalLink,
   IconGlobe,
-} from '@edifice.io/react/icons';
+} from '@open-ent/react/icons';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { useShallow } from 'zustand/react/shallow';

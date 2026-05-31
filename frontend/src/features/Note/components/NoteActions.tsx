@@ -4,8 +4,8 @@ import {
   Dropdown,
   DropdownMenuOptions,
   IconButtonProps,
-} from '@edifice.io/react';
-import { IconDelete, IconEdit } from '@edifice.io/react/icons';
+} from '@open-ent/react';
+import { IconDelete, IconEdit } from '@open-ent/react/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 

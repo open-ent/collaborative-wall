@@ -1,14 +1,14 @@
 import { Ref, forwardRef, useEffect } from 'react';
 
-import { Switch, useEdificeClient } from '@edifice.io/react';
-import { Editor, EditorRef } from '@edifice.io/react/editor';
+import { Switch, useEdificeClient } from '@open-ent/react';
+import { Editor, EditorRef } from '@open-ent/react/editor';
 import {
   IExternalLink,
   InternalLinkTabResult,
   MediaLibrary,
   MediaLibraryType,
-} from '@edifice.io/react/multimedia';
-import { WorkspaceElement } from '@edifice.io/client';
+} from '@open-ent/react/multimedia';
+import { WorkspaceElement } from '@open-ent/client';
 import { useTranslation } from 'react-i18next';
 
 import clsx from 'clsx';

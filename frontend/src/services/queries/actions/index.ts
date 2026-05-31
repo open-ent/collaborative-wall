@@ -1,4 +1,4 @@
-import { IAction } from '@edifice.io/client';
+import { IAction } from '@open-ent/client';
 import { queryOptions } from '@tanstack/react-query';
 import { sessionHasWorkflowRights } from '~/services/api';
 

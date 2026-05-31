@@ -1,4 +1,4 @@
-import { EmptyScreen } from '@edifice.io/react';
+import { EmptyScreen } from '@open-ent/react';
 import { useTranslation } from 'react-i18next';
 
 import illuError from '@images/emptyscreen/illu-error.svg';

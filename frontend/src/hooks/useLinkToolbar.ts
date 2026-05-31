@@ -1,7 +1,7 @@
 import { RefObject, useCallback } from 'react';
 
-import { MediaLibraryRef } from '@edifice.io/react/multimedia';
-import { EditorInstance } from '@edifice.io/react/editor';
+import { MediaLibraryRef } from '@open-ent/react/multimedia';
+import { EditorInstance } from '@open-ent/react/editor';
 
 /**
  * Custom hook to handle LinkToolbar events.

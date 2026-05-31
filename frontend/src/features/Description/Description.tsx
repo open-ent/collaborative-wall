@@ -1,4 +1,4 @@
-import { Button, LoadingScreen, useEdificeClient } from '@edifice.io/react';
+import { Button, LoadingScreen, useEdificeClient } from '@open-ent/react';
 import { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useShallow } from 'zustand/react/shallow';
