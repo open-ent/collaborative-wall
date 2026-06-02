@@ -39,10 +39,10 @@
     ]
   },
   "dependencies": {
-    "@open-ent/react": "^2.5.22",
-    "@open-ent/bootstrap": "^2.5.22",
-    "@open-ent/client": "^2.5.22",
-    "@open-ent/explorer": "^2.5.22",
+    "@open-ent/react": "^2.5.26",
+    "@open-ent/bootstrap": "^2.5.26",
+    "@open-ent/client": "^2.5.26",
+    "@open-ent/explorer": "^2.5.26",
     "@mantine/hooks": "7.7.1",
     "@react-spring/web": "9.7.5",
     "@tanstack/react-query": "5.62.7",
