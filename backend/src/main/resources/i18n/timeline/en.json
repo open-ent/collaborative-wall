@@ -1,1 +1,8 @@
-{}
+{
+  "collaborativewall": "Collaborative wall",
+  "collaborativewall.share": "Collaborative wall sharing",
+  "timeline.cwall.has.created.wall": "created the collaborative wall",
+  "timeline.cwall.has.shared": "shared the collaborative wall with you",
+  "timeline.cwall.in": "in the collaborative wall",
+  "timeline.cwall.push.notif.shared": "Collaborative wall: Collaborative wall sharing"
+}
