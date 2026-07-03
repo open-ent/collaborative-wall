@@ -38,11 +38,29 @@ export default ({ mode }: { mode: string }) => {
         changeOrigin: false,
       };
 
+  // Mode « embed » : bundle micro-frontend AUTO-CONTENU (embarque son propre React 18)
+  // exposant mount/unmount pour le montage in-layout dans le dashboard (CCTP 51C-2).
+  const isEmbed = mode === 'embed';
+
   /* Replace "/" the name of your application (e.g : blog | mindmap | collaborativewall) */
   return defineConfig({
-    base: mode === 'production' ? '/collaborativewall' : '',
+    base:
+      mode === 'production'
+        ? '/collaborativewall'
+        : isEmbed
+          ? '/collaborativewall/public/embed/'
+          : '',
     root: __dirname,
     cacheDir: './node_modules/.vite/collaborativewall',
+    // Le bundle embed embarque React/deps qui lisent `process.env.NODE_ENV` au runtime.
+    ...(isEmbed
+      ? {
+          define: {
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env': '{}',
+          },
+        }
+      : {}),
 
     resolve: {
       // @open-ent/explorer embarque ses propres copies de @open-ent/{client,react} → instance
@@ -120,7 +138,26 @@ export default ({ mode }: { mode: string }) => {
       }),
     ],
 
-    build: {
+    build: isEmbed
+      ? {
+          // Bundle auto-contenu exposant mount/unmount (entrée src/mount.tsx).
+          outDir: './embed',
+          emptyOutDir: true,
+          commonjsOptions: { transformMixedEsModules: true },
+          lib: {
+            entry: resolve(__dirname, 'src/mount.tsx'),
+            name: 'OpenEntCollaborativeWallEmbed',
+            formats: ['es'],
+            fileName: () => 'collaborativewall.js',
+          },
+          rollupOptions: {
+            output: {
+              inlineDynamicImports: true,
+              entryFileNames: 'collaborativewall.js',
+            },
+          },
+        }
+      : {
       outDir: './dist',
       emptyOutDir: true,
       reportCompressedSize: true,
