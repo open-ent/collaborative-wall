@@ -5,7 +5,8 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import { explorerConfig } from '~/config';
 import { PageError } from '~/routes/page-error';
 import { NotFound } from './not-found';
-const routes = (queryClient: QueryClient): RouteObject[] => [
+// Exporté pour un montage embarqué (in-layout dashboard, CCTP 51C-2) via MemoryRouter — cf. src/mount.tsx.
+export const routes = (queryClient: QueryClient): RouteObject[] => [
   {
     path: '/*',
     async lazy() {
