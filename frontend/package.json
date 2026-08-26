@@ -39,9 +39,9 @@
     ]
   },
   "dependencies": {
-    "@open-ent/react": "^2.5.29",
+    "@open-ent/react": "2.5.30-patched",
     "@open-ent/bootstrap": "2.5.30-patched",
-    "@open-ent/client": "^2.5.29",
+    "@open-ent/client": "2.5.30-patched",
     "@open-ent/explorer": "^2.5.26",
     "@mantine/hooks": "7.7.1",
     "@react-spring/web": "9.7.5",
@@ -95,6 +95,14 @@
   "packageManager": "pnpm@9.12.2",
   "engines": {
     "node": "18 || 20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@open-ent/react": "2.5.30-patched",
+      "@open-ent/bootstrap": "2.5.30-patched",
+      "@open-ent/client": "2.5.30-patched",
+      "@open-ent/utilities": "2.5.30-patched"
+    }
   },
   "nx": {}
 }
