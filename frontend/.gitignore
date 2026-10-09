@@ -45,3 +45,6 @@ Thumbs.db
 
 .env*
 *.tsbuildinfo.__mf__temp/
+
+# Cache de compilation TypeScript
+*.tsbuildinfo
