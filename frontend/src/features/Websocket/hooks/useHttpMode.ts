@@ -1,6 +1,7 @@
 import { odeServices } from '@open-ent/client';
 import { useQueries, useQueryClient } from '@tanstack/react-query';
 
+import { checkHttpResponse } from '~/services/api';
 import { NoteProps } from '~/models/notes';
 import {
   deleteNoteQueryData,
@@ -134,6 +135,14 @@ export const useHttpMode = (
     await odeServices
       .http()
       .putJson(`/collaborativewall/${resourceId}/event`, payload);
+    // Envoi refusé : on lève, sinon l'historique annule/rétablit un changement non enregistré
+    try {
+      checkHttpResponse();
+    } catch (error) {
+      // on resynchronise l'écran (la note supprimée localement réapparaît)
+      await refetch();
+      throw error;
+    }
 
     // refresh
     const result = await refetch();

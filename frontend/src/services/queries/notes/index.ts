@@ -7,7 +7,12 @@ import {
 } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { NoteProps, PickedNoteProps } from '~/models/notes';
-import { getNote, getNotes, updateNote } from '~/services/api';
+import {
+  checkHttpResponse,
+  getNote,
+  getNotes,
+  updateNote,
+} from '~/services/api';
 
 export const notesQueryOptions = (wallId: string) =>
   queryOptions({
@@ -45,10 +50,13 @@ export const useCreateNote = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (data: PickedNoteProps) =>
-      await odeServices
+    mutationFn: async (data: PickedNoteProps) => {
+      const result = await odeServices
         .http()
-        .post(`/collaborativewall/${data.idwall}/note`, data),
+        .post(`/collaborativewall/${data.idwall}/note`, data);
+      checkHttpResponse();
+      return result;
+    },
     onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: ['notes'] });
     },
@@ -65,11 +73,13 @@ export const useUpdateNote = () => {
 export const useDeleteNote = () => {
   return useMutation({
     mutationFn: async (data: NoteProps) => {
-      return await odeServices
+      const result = await odeServices
         .http()
         .delete(
           `/collaborativewall/${data.idwall}/note/${data._id}?lastEdit=${data.modified?.$date}`,
         );
+      checkHttpResponse();
+      return result;
     },
   });
 };

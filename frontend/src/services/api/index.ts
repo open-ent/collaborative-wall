@@ -6,7 +6,11 @@ import {
   PickedCollaborativeWallProps,
 } from '~/models/wall';
 
-const checkHttpResponse = () => {
+/**
+ * Le client HTTP du socle ne lève pas sur erreur : à appeler après chaque écriture.
+ * Ex. : une note supprimée en 403 lève « error » au lieu de disparaître de l'écran.
+ */
+export const checkHttpResponse = () => {
   const { status } = odeServices.http().latestResponse;
   if (status == 401) {
     throw 'unauthorized';
