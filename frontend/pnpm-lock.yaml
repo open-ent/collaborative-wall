@@ -72,8 +72,8 @@ importers:
         specifier: 11.11.4
         version: 11.11.4(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       uuid:
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 11.1.1
+        version: 11.1.1
       zustand:
         specifier: 4.5.7
         version: 4.5.7(@types/react@18.3.27)(react@18.3.1)
@@ -912,7 +912,7 @@ packages:
     engines: {node: 18 || 20}
 
   '@open-ent/react@2.5.30-patched':
-    resolution: {integrity: sha512-nJiiA+HjOI2qeJmJcLFQIxnuj8QdsNdbYPKfaZK+ZIqQ3ILoRzAh9VVkUQagWP0kQj9J3rGanE+pqHaLvrFlQQ==, tarball: https://npm.pkg.github.com/download/@open-ent/react/2.5.30-patched/b7fa5fd28b027467ebb850c1ab55082d87c3bba5}
+    resolution: {integrity: sha512-LJ2keReDmKpMAMaJ97xlqJnj6GeNt1bsgt/k4iZUtMmEwKWklqA5Ep863JuPJSrBp1UmGscxednFF4pw09s67Q==, tarball: https://npm.pkg.github.com/download/@open-ent/react/2.5.30-patched/60bbeeb3e6481d65d226eb3f834c3b55d81de64a}
     peerDependencies:
       '@react-spring/web': 9.7.5
       '@tanstack/react-query': 5.62.7
@@ -4167,9 +4167,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+  uuid@11.1.1:
+    resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
     hasBin: true
 
   vite-node@3.2.4:
@@ -8850,7 +8849,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@9.0.1: {}
+  uuid@11.1.1: {}
 
   vite-node@3.2.4(@types/node@18.19.130)(yaml@2.9.1):
     dependencies:
